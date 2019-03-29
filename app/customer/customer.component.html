@@ -1,0 +1,30 @@
+<div *ngIf="isAuthenticated" class = "row">
+  <div class="col-md-12">
+<table class="table table-striped">
+    <thead >
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">City</th>
+        <th scope="col">Notes</th>
+
+      </tr>
+    </thead>
+    <tbody *ngFor = "let customer of customers">
+      <tr>
+        <th scope="row">{{customer.id}}</th>
+        <td>{{customer.name}}</td>
+        <td>{{customer.phoneNumber}}</td>
+        <td>{{customer.city}}</td>
+        <td>{{customer.note}}</td>
+        <div style="margin-top :1.5%"><button type="button" routerLink="/customerupdel/{{customer.id}}" class="btn btn-secondary">Delete / Update</button></div>
+        
+
+      </tr>      
+    </tbody>
+  </table>
+</div>
+</div>
+<div *ngIf="!isAuthenticated" style="text-align:center"><h2>Please log in to view customers</h2></div>
+
